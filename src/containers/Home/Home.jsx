@@ -161,7 +161,7 @@ class Home extends Component {
                     </div>
                   )}
 
-                  {fetching && avatars.length === 0 && (
+                  {!fetching && avatars.length === 0 && (
                     <div className="col-md-12 p-2">No avatars available</div>
                   )}
 
