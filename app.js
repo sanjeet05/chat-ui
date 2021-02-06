@@ -5,6 +5,7 @@ const path = require("path");
 const helmet = require("helmet");
 const fs = require("fs");
 const compression = require("compression");
+const nocache = require('nocache');
 
 const port = process.env.PORT || 3000;
 
@@ -15,7 +16,7 @@ app.use(helmet());
 // compress all responses
 app.use(compression());
 
-app.use(helmet.noCache());
+app.use(nocache());
 app.use(helmet.frameguard());
 app.use(
   helmet({
