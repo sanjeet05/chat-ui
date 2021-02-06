@@ -11,20 +11,20 @@ const port = process.env.PORT || 3000;
 
 // cors issue
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 
 // compress all responses
 app.use(compression());
 
-app.use(nocache());
-app.use(helmet.frameguard());
-app.use(
-  helmet({
-    frameguard: {
-      action: "deny",
-    },
-  })
-);
+// app.use(nocache());
+// app.use(helmet.frameguard());
+// app.use(
+//   helmet({
+//     frameguard: {
+//       action: "deny",
+//     },
+//   })
+// );
 
 // other static resources should just be served as they are
 app.use(express.static(path.resolve(__dirname, "build"), { maxAge: "30d" }));
